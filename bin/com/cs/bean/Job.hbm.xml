@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cs.bean">
+    <class name="Job" table="t_job">
+        <id name="jobId" column="jobid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="stuId" column="stuid"/>
+        <property name="company" column="company"/>
+        <property name="jobTitle" column="jobtitle"/>
+        <property name="salary" column="salary"/>
+         <property name="welfare" column="welfare"/>
+       	<property name="address" column="address"/>
+        <property name="comPhone" column="comphone"/>
+        <property name="hireDay" column="hireday"/>
+        <property name="status" column="status"/>
+        <!-- 一个学生对应多个就业信息 -->
+        <many-to-one name="stu" column="stuid" class="com.cs.bean.Stu" fetch="select" cascade="none" insert="false" update="false"/>
+    </class>
+</hibernate-mapping>

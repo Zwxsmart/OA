@@ -1,0 +1,81 @@
+学生管理模块
+
+全限定名										des
+com.cs.action.StuAction.loginPage      		学生登录页面
+com.cs.action.StuAction.skipPage      		正式学生登录页面
+com.cs.action.StuAction.save				添加正式学生
+com.cs.action.StuAction.queryAll			查询全部正式学生
+com.cs.action.StuAction.queryById			查询单个正式学生
+com.cs.action.StuAction.update				修改正式学生
+com.cs.action.StuAction.updateFreeze		修改正式学生状态
+com.cs.action.StuAction.queryFreezeAll		查询冻结正式学生
+com.cs.action.StuAction.blurredAllQuery		正式学生页面模糊查询
+com.cs.action.StuAction.termIdQueryAll		根据条件查询正式学生
+
+com.cs.action.RoomAction.skipPage			宿舍页面
+com.cs.action.RoomAction.save				添加宿舍
+com.cs.action.RoomAction.queryAll			查询全部宿舍
+com.cs.action.RoomAction.queryById			查询单个宿舍
+com.cs.action.RoomAction.update				修改宿舍
+com.cs.action.RoomAction.updateFreeze		修改宿舍状态
+com.cs.action.RoomAction.queryFreezeAll		查询冻结宿舍
+com.cs.action.RoomAction.blurredAllQuery	宿舍页面模糊查询
+com.cs.action.RoomAction.addStuByIds		宿舍添加学生
+com.cs.action.RoomAction.delStuByIds		宿舍删除学生
+
+com.cs.action.GradeAction.skipPage			班级页面
+com.cs.action.GradeAction.save				添加班级
+com.cs.action.GradeAction.queryAll			查询全部班级
+com.cs.action.GradeAction.update			修改班级
+com.cs.action.GradeAction.updateFreeze		修改班级状态
+com.cs.action.GradeAction.queryFreezeAll	查询冻结班级
+com.cs.action.GradeAction.blurredAllQuery	班级页面模糊查询
+com.cs.action.GradeAction.addStuByIds		班级添加学生
+com.cs.action.GradeAction.delStuByIds		班级删除学生
+
+com.cs.action.ScoreAction.skipPage			成绩页面
+com.cs.action.ScoreAction.save				添加成绩
+com.cs.action.ScoreAction.update			修改成绩
+com.cs.action.ScoreAction.queryAll			查询全部成绩
+com.cs.action.ScoreAction.stuScoreById		根据学生ID查询成绩
+com.cs.action.ScoreAction.stuScore			根据班级ID查询成绩
+
+com.cs.action.StuLeaveAction.skipPage		  学生请假页面
+com.cs.action.StuLeaveAction.save			  添加学生请假
+com.cs.action.StuLeaveAction.queryAll		  查询全部请假
+com.cs.action.StuLeaveAction.update			  修改请假
+com.cs.action.StuLeaveAction.updateFreeze	  修改请假状态
+com.cs.action.StuLeaveAction.queryFreezeAll	   查询冻结请假
+com.cs.action.StuLeaveAction.blurredAllQuery 请假页面模糊查询
+com.cs.action.StuLeaveAction.serachTime		    根据请假时间段查询
+
+com.cs.action.StuFeedbackAction.skipPage		  学生反馈页面
+com.cs.action.StuFeedbackAction.save			  添加学生反馈
+com.cs.action.StuFeedbackAction.queryAll		  查询全部反馈
+com.cs.action.StuFeedbackAction.update			  修改反馈
+com.cs.action.StuFeedbackAction.updateFreeze	  修改反馈状态
+com.cs.action.StuFeedbackAction.queryFreezeAll	   查询冻结反馈
+com.cs.action.StuFeedbackAction.blurredAllQuery 反馈页面模糊查询
+
+com.cs.action.JobAction.skipPage		  	学生就业页面
+com.cs.action.JobAction.save			  	添加学生就业
+com.cs.action.JobAction.queryAll		 	查询全部就业
+com.cs.action.JobAction.update			  	修改就业
+com.cs.action.JobAction.updateFreeze	  	修改就业状态
+com.cs.action.JobAction.queryFreezeAll	   	查询冻结就业
+com.cs.action.JobAction.blurredAllQuery 	就业页面模糊查询
+
+com.cs.action.TalkAction.skipPage		  	学生谈心页面
+com.cs.action.TalkAction.save			  	添加学生谈心
+com.cs.action.TalkAction.queryAll		 	查询全部谈心
+com.cs.action.TalkAction.update			  	修改谈心
+com.cs.action.TalkAction.updateFreeze	  	修改谈心状态
+com.cs.action.TalkAction.queryFreezeAll	   	查询冻结谈心
+com.cs.action.TalkAction.blurredAllQuery 	谈心页面模糊查询
+
+com.cs.action.StuCheckingAction.skipPage		学生谈心页面
+com.cs.action.StuCheckingAction.save			添加学生谈心
+com.cs.action.StuCheckingAction.queryAll		查询全部谈心
+com.cs.action.StuCheckingAction.update			修改谈心
+com.cs.action.StuCheckingAction.updateFreeze	修改谈心状态
+com.cs.action.StuCheckingAction.stuChecking 	按照班级查询学生考勤 

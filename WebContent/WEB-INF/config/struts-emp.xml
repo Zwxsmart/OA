@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.action.extension" value="action,,do" />
+    <constant name="struts.multipart.maxSize" value="20971520" />
+
+    <package name="emp-struts" extends="my-struts" namespace="/emp">
+        <action name="*" class="com.cs.action.EmpAction" method="{1}">
+        	<result name="skip">/WEB-INF/views/emp/emp.jsp</result>
+        	<result name="empqueryByid" type="json"/>
+        	<result name="empupdatebyid" type="json"/>
+            <result name="save" type="json"/>
+            <result name="all" type="json"/>
+            <result name="update" type="json"/>
+            <result name="activate" type="json"/>
+            <result name="disable" type="json"/>
+            <result name="blurredAllQuery" type="json"/>
+            <result name="termIdQueryAll" type="json"></result>
+             <result name="updatePwd" type="json"></result>
+            <result name="loginPage">/WEB-INF/emp/login.jsp</result>
+            <result name="login" type="redirectAction">home</result>
+            <result name="login" type="redirectAction">chargeHome</result><!-- 班主任的重定向 -->
+            <result name="chargeClassLogin">/WEB-INF/classTeacher/chargeIndex.jsp</result><!-- 班主任登陆后index -->
+            <result name="directorLogin" type="redirectAction">mhome</result>
+            <result name="eadlogin" type="redirectAction">eadhome</result><!-- 教务部主任的重定向 -->
+            <result name="logisticsLogin" type="redirectAction">jhome</result><!-- 后勤部主任的重定向 -->
+            
+            <result name="adminLogin" type="redirectAction">adminHome</result><!-- 老板的重定向 -->
+            
+            <result name="input">/WEB-INF/views/emp/error.jsp</result>
+            <result name="out">/WEB-INF/views/emp/login.jsp</result>
+            <result name="blurredAllQuery" type="json"></result><!-- 模糊查询 -->
+            <result name="serachtime" type="json"/><!-- 时间段查询 -->
+            <result name="queryRoleAll" type="json"/>
+            <result name="queryDeptAll" type="json"/>
+            <result name="NoPrevillige">/WEB-INF/views/NoPrevillige.jsp</result>	<!-- 错误页面 -->
+            
+            <!-- 招生部主任 -->
+            <result name="admissionsLogin" type="redirectAction">admissions</result>
+            
+            <!-- 员工个人信息 -->
+            <result name="messagePage">/WEB-INF/emp/message/emp.jsp</result>
+            <result name="message" type="json"/>
+            
+        </action>
+        
+        <action name="home" class="com.cs.action.HomeAction">
+              <result name="success">/WEB-INF/emp/index.jsp</result>
+        </action>
+         <!-- <action name="chargeHome" class="com.cs.action.HomeAction">
+              <result name="success">/WEB-INF/emp/index.jsp</result>
+        </action> -->
+        
+        <action name="mhome" class="com.cs.action.HomeAction">
+              <result name="success">/WEB-INF/money/index.jsp</result>
+        </action>
+        <!-- 后勤部   姜圆 -->
+         <action name="jhome" class="com.cs.action.HomeAction">
+              <result name="success">/WEB-INF/logistics/index.jsp</result>
+        </action>
+        <!-- 后勤部   姜圆 -->
+        
+       	<!-- 教务部主任 王怡 -->
+        <action name="eadhome" class="com.cs.action.HomeAction">
+        	  <result name="success">/WEB-INF/EadDirector/index.jsp</result>
+        </action>
+        <!-- 教务部主任 王怡 -->
+        
+           
+        <action name="admissions" class="com.cs.action.HomeAction">
+              <result name="success">/WEB-INF/views/index.jsp</result>
+        </action>
+        
+        <action name="adminHome" class="com.cs.action.HomeAction">
+         	 <result name="success">/WEB-INF/views/index.jsp</result>
+        </action>
+        
+    </package>
+</struts>

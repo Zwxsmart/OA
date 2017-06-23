@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- 课程表的Mapping映射文件，对应Course -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.bean">
+    <class name="Course" table="t_course">
+        <id name="courseId" column="courseid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="courseOrder" column="courseorder"/>
+        <property name="des" column="des"/>
+        <property name="name" column="name"/>
+        <property name="status" column="status"/>
+        <property name="term" column="term"/>
+        <property name="totalHour" column="totalhour"/>
+        
+        <!-- 一个课程多个成绩 -->
+        <set name="scores" inverse="true" lazy="true">
+	            <key column="courseid"/>
+	            <one-to-many class="com.cs.bean.Score"/>
+	     </set>
+    </class>
+</hibernate-mapping>

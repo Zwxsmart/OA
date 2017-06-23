@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/views/emp/error.jsp=UTF-8
+encoding//src/com/cs/dao/AbstractBaseDAO.java=UTF-8
+encoding//src/com/cs/dao/BaseDAO.java=UTF-8
+encoding//src/com/cs/dao/UserDAO.java=UTF-8
+encoding//src/com/cs/dao/UserDAOImpl.java=UTF-8
+encoding//src/com/cs/service/UserService.java=UTF-8
+encoding//src/com/cs/service/UserServiceImpl.java=UTF-8

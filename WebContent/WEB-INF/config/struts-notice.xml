@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.action.extension" value="action,,do"/>
+	<constant name="struts.multipart.maxSize" value="20971520"/>
+	
+	<package name="notice-struts" extends="my-struts" namespace="/notice">
+		<action name="*" class="com.cs.action.NoticeAction" method="{1}">
+			<result name="skip">/WEB-INF/views/notice/notice.jsp</result>
+			<result name="admissionsSkip">/WEB-INF/admissions/notice/notice.jsp</result><!-- 招生部主任 -->
+			<result name="save" type="json"></result>
+			<result name="all" type="json"></result>
+			<result name="update" type="json"></result>
+			<result name="activate" type="json"></result>
+            <result name="disable" type="json"></result>
+			<result name="blurredAllQuery" type="json"></result>
+			<result name="NoPrevillige">/WEB-INF/views/NoPrevillige.jsp</result>
+			
+			<result name="empNoticePage">/WEB-INF/emp/message/notice.jsp</result>
+			<result name="empNotice" type="json"></result>
+			
+			
+			
+		</action>
+	</package>	
+</struts>

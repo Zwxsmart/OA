@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cs.bean">
+    <class name="EmpAppeal" table="t_empappeal">
+        <id name="appealId" column="appealid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="empId" column="empid"/>
+        <property name="appealDay" column="appealday"/>
+        <property name="des" column="des"/>
+        <property name="status" column="status"/>
+        <property name="firstLevel" column="firstlevel"/>
+ 		<property name="secondLevel" column="secondlevel"/>
+        <property name="pass" column="pass"/>
+    </class>
+     
+     <!--
+     <set name="emps" inverse="true" cascade="all" lazy="true">
+            <key column="depid"/>
+            <one-to-many class="com.cs.bean.Emp"/>
+     </set>
+       -->
+     
+    
+</hibernate-mapping>

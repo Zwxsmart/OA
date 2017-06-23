@@ -1,0 +1,28 @@
+*{
+	margin:0px;
+	padding:0px;
+  }
+  
+  .include .head{
+  	text-align: center;
+  	margin:0 auto;
+  	margin-top: 10px;
+  	
+  }
+  .include .head img:hover{
+  	box-shadow: 4px 6px 8px #A9A9A9;
+  	cursor:hand; 
+  	-webkit-transform: scale(.9);
+            -ms-transform: scale(.9);
+            transform: scale(.9);
+            box-shadow: 10px 10px 10px rgba(34, 25, 25, 0.9);
+            
+            
+  }
+.include .head img{
+  	 box-shadow: 2px 4px 6px #A9A9A9;
+  	cursor:hand;
+    transition: .3s cubic-bezier(.3,0,0,1.3);
+    
+  }
+  

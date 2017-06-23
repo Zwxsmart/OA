@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--测试类-->
+    <bean name="userDao" class="com.cs.dao.UserDAOImpl" autowire="byType"/>
+    <bean name="userService" class="com.cs.service.UserServiceImpl" autowire="byType"/>
+    <bean name="userAction" class="com.cs.action.UserAction" autowire="byType"/>
+    <bean name="preDao" class="com.cs.dao.PrevilligeDAOImpl" autowire="byType"/>
+    <bean name="preService" class="com.cs.service.PrevilligeServiceImpl" autowire="byType"/>
+    
+<!-- 张文星 -->
+	<!--学生-->
+    <bean name="stuDao" class="com.cs.dao.StuDAOImpl" autowire="byType"/>
+    <bean name="stuService" class="com.cs.service.StuServiceImpl" autowire="byType"/>
+    <bean name="stuAction" class="com.cs.action.StuAction" autowire="byType"/>
+    <!-- 宿舍 -->
+    <bean name="roomDao" class="com.cs.dao.RoomDAOImpl" autowire="byType"/>
+    <bean name="roomService" class="com.cs.service.RoomServiceImpl" autowire="byType"/>
+    <bean name="roomAction" class="com.cs.action.RoomAction" autowire="byType"/>
+    <!-- 班级 -->
+	<bean name="gradeDao" class="com.cs.dao.GradeDAOImpl" autowire="byType"/>
+    <bean name="gradeService" class="com.cs.service.GradeServiceImpl" autowire="byType"/>
+    <bean name="gradeAction" class="com.cs.action.GradeAction" autowire="byType"/>
+    <!-- 成绩-->
+	<bean name="scoreDao" class="com.cs.dao.ScoreDAOImpl" autowire="byType"/>
+    <bean name="scoreService" class="com.cs.service.ScoreServiceImpl" autowire="byType"/>
+    <bean name="scoreAction" class="com.cs.action.ScoreAction" autowire="byType"/>
+     <!-- 学生请假-->
+	<bean name="stuLeaveDao" class="com.cs.dao.StuLeaveDAOImpl" autowire="byType"/>
+    <bean name="stuLeaveService" class="com.cs.service.StuLeaveServiceImpl" autowire="byType"/>
+    <bean name="stuLeaveAction" class="com.cs.action.StuLeaveAction" autowire="byType"/>
+    <!-- 学生谈心-->
+	<bean name="talkDao" class="com.cs.dao.TalkDAOImpl" autowire="byType"/>
+    <bean name="talkService" class="com.cs.service.TalkServiceImpl" autowire="byType"/>
+    <bean name="talkAction" class="com.cs.action.TalkAction" autowire="byType"/>
+     <!-- 学生反馈-->
+	<bean name="stuFeedbackDao" class="com.cs.dao.StuFeedbackDAOImpl" autowire="byType"/>
+    <bean name="stuFeedbackService" class="com.cs.service.StuFeedbackServiceImpl" autowire="byType"/>
+    <bean name="stuFeedbackAction" class="com.cs.action.StuFeedbackAction" autowire="byType"/>
+     <!-- 学生就业-->
+	<bean name="jobDao" class="com.cs.dao.JobDAOImpl" autowire="byType"/>
+    <bean name="jobService" class="com.cs.service.JobServiceImpl" autowire="byType"/>
+    <bean name="jobAction" class="com.cs.action.JobAction" autowire="byType"/>
+     <!-- 学生考勤-->
+	<bean name="stuCheckingDao" class="com.cs.dao.StuCheckingDAOImpl" autowire="byType"/>
+    <bean name="stuCheckingService" class="com.cs.service.StuCheckingServiceImpl" autowire="byType"/>
+    <bean name="stuCheckingAction" class="com.cs.action.StuCheckingAction" autowire="byType"/>
+<!-- 张文星 -->
+
+<!-- 姜圆圆 -->
+	<!-- 公告类型 -->
+	<bean autowire="byType" class="com.cs.dao.NoticeTypeDAOImpl" name="noticeTypeDAO"/>
+	<bean autowire="byType" class="com.cs.service.NoticeTypeServiceImpl" name="noticeTypeService"/>
+	<bean autowire="byType" class="com.cs.action.NoticeTypeAction" name="noticeTypeAction"/>
+	<!-- 公告栏消息 -->
+	<bean autowire="byType" class="com.cs.dao.NoticeDAOImpl" name="noticeDAO"/>
+	<bean autowire="byType" class="com.cs.service.NoticeServiceImpl" name="noticeService"/>
+	<bean autowire="byType" class="com.cs.action.NoticeAction" name="noticeAction"/>
+<!-- 姜圆圆 -->
+	
+<!-- 温鑫 -->
+	<!-- 意向学生 -->
+    <bean name="stuIntentionDao" class="com.cs.dao.StuIntentionDAOImpl" autowire="byType"/>
+    <bean name="stuIntentionService" class="com.cs.service.StuIntentionServiceImpl" autowire="byType"/>
+    <bean name="stuIntentionAction" class="com.cs.action.StuIntentionAction" autowire="byType"/>
+    
+    <!-- 预定学生 -->
+    <bean name="stuPredetermineDao" class="com.cs.dao.StuPredetermineDAOImpl" autowire="byType"/>
+    <bean name="stuPredetermineService" class="com.cs.service.StuPredetermineServiceImpl" autowire="byType"/>
+    <bean name="stuPredetermineAction" class="com.cs.action.StuPredetermineAction" autowire="byType"/>
+    
+   
+<!-- 温鑫 -->
+    
+<!-- 王彬, ZYL -->
+    <!-- 部门 -->
+	<bean name="deptDao" class="com.cs.dao.DeptDAOImpl" autowire="byType"/>
+    <bean name="deptService" class="com.cs.service.DeptServiceImpl" autowire="byType"/>
+    <bean name="deptAction" class="com.cs.action.DeptAction" autowire="byType"/>
+    <!-- 员工角色-->
+	<bean name="roleDao" class="com.cs.dao.RoleDAOImpl" autowire="byType"/>
+    <bean name="roleService" class="com.cs.service.RoleServiceImpl" autowire="byType"/>
+    <bean name="roleAction" class="com.cs.action.RoleAction" autowire="byType"/>
+    <!-- 员工 -->
+    <bean name="empDao" class="com.cs.dao.EmpDAOImpl" autowire="byType"/>
+    <bean name="empService" class="com.cs.service.EmpServiceImpl" autowire="byType"/>
+    <bean name="empAction" class="com.cs.action.EmpAction" autowire="byType"/>
+     <!-- 员工教育背景 -->
+    <bean name="eduDao" class="com.cs.dao.EduDAOImpl" autowire="byType"/>
+    <bean name="eduService" class="com.cs.service.EduServiceImpl" autowire="byType"/>
+    <bean name="eduAction" class="com.cs.action.EduAction" autowire="byType"/>
+    
+      <!-- ZYL 员工工作经历 -->
+    <bean name="expDAO" class="com.cs.dao.ExpDAOImpl" autowire="byType"/>
+    <bean name="expService" class="com.cs.service.ExpServiceImpl" autowire="byType"/>
+    <bean name="expAction" class="com.cs.action.ExpAction" autowire="byType"/>
+    
+      <!-- 员工值班 -->
+    <bean name="dutyDAO" class="com.cs.dao.DutyDAOImpl" autowire="byType"/>
+    <bean name="dutyService" class="com.cs.service.DutyServiceImpl" autowire="byType"/>
+    <bean name="dutyAction" class="com.cs.action.DutyAction" autowire="byType"/>
+      <!-- ZYL 员工考勤信息 -->
+    <bean name="empCheckingInfoDAO" class="com.cs.dao.EmpCheckingInfoDAOImpl" autowire="byType"/>
+    <bean name="empCheckingInfoService" class="com.cs.service.EmpCheckingInfoServiceImpl" autowire="byType"/>
+    <bean name="empCheckingInfoAction" class="com.cs.action.EmpCheckingInfoAction" autowire="byType"/>
+       <!-- ZYL 员工考勤 -->
+    <bean name="empCheckingDAO" class="com.cs.dao.EmpCheckingDAOImpl" autowire="byType"/>
+    <bean name="empCheckingService" class="com.cs.service.EmpCheckingServiceImpl" autowire="byType"/>
+    <bean name="empCheckingAction" class="com.cs.action.EmpCheckingAction" autowire="byType"/>
+       <!-- ZYL 员工考勤申诉 -->
+    <bean name="empAppealDAO" class="com.cs.dao.EmpAppealDAOImpl" autowire="byType"/>
+    <bean name="empAppealService" class="com.cs.service.EmpAppealServiceImpl" autowire="byType"/>
+    <bean name="empAppealAction" class="com.cs.action.EmpAppealAction" autowire="byType"/>
+       <!-- ZYL 员工考勤反馈 -->
+    <bean name="empFeedBackDAO" class="com.cs.dao.EmpFeedBackDAOImpl" autowire="byType"/>
+    <bean name="empFeedBackService" class="com.cs.service.EmpFeedBackServiceImpl" autowire="byType"/>
+    <bean name="empFeedBackAction" class="com.cs.action.EmpFeedBackAction" autowire="byType"/>
+       <!-- ZYL 员工请假 -->
+    <bean name="empLeaveDAO" class="com.cs.dao.EmpLeaveDAOImpl" autowire="byType"/>
+    <bean name="empLeaveService" class="com.cs.service.EmpLeaveServiceImpl" autowire="byType"/>
+    <bean name="empLeaveAction" class="com.cs.action.EmpLeaveAction" autowire="byType"/>
+      <!-- ZYL 员工巡查 -->
+    <bean name="checkDAO" class="com.cs.dao.CheckDAOImpl" autowire="byType"/>
+    <bean name="checkService" class="com.cs.service.CheckServiceImpl" autowire="byType"/>
+    <bean name="checkAction" class="com.cs.action.CheckAction" autowire="byType"/>
+      <!-- ZYL 员工工作日志 -->
+    <bean name="reportDAO" class="com.cs.dao.ReportDAOImpl" autowire="byType"/>
+    <bean name="reportService" class="com.cs.service.ReportServiceImpl" autowire="byType"/>
+    <bean name="reportAction" class="com.cs.action.ReportAction" autowire="byType"/>
+     <!-- ZYL 物品类型 -->
+    <bean name="goodsTypeDAO" class="com.cs.dao.GoodsTypeDAOImpl" autowire="byType"/>
+    <bean name="goodsTypeService" class="com.cs.service.GoodsTypeServiceImpl" autowire="byType"/>
+    <bean name="goodsTypeAction" class="com.cs.action.GoodsTypeAction" autowire="byType"/>
+    <!-- ZYL 物品 -->
+    <bean name="goodsDAO" class="com.cs.dao.GoodsDAOImpl" autowire="byType"/>
+    <bean name="goodsService" class="com.cs.service.GoodsServiceImpl" autowire="byType"/>
+    <bean name="goodsAction" class="com.cs.action.GoodsAction" autowire="byType"/>
+    <!-- ZYL 物品 申购-->
+    <bean name="goodsAppDAO" class="com.cs.dao.GoodsAppDAOImpl" autowire="byType"/>
+    <bean name="goodsAppService" class="com.cs.service.GoodsAppServiceImpl" autowire="byType"/>
+    <bean name="goodsAppAction" class="com.cs.action.GoodsAppAction" autowire="byType"/>
+    <!-- ZYL 物品 领用-->
+    <bean name="goodsUseDAO" class="com.cs.dao.GoodsUseDAOImpl" autowire="byType"/>
+    <bean name="goodsUseService" class="com.cs.service.GoodsUseServiceImpl" autowire="byType"/>
+    <bean name="goodsUseAction" class="com.cs.action.GoodsUseAction" autowire="byType"/>
+<!-- 王彬, ZYL -->
+
+<!-- 王怡 -->
+	<!-- 课程 -->
+	<bean name="courseDao" class="com.cs.dao.CourseDAOlmpl" autowire="byType"/>
+    <bean name="courseService" class="com.cs.service.CourseServicelmpl" autowire="byType"/>
+    <bean name="courseAction" class="com.cs.action.CourseAction" autowire="byType"/>
+	<!-- 研讨会 -->
+	<bean name="meettingDao" class="com.cs.dao.MeettingDAOlmpl" autowire="byType"/>
+    <bean name="meettingService" class="com.cs.service.MeettingServicelmpl" autowire="byType"/>
+    <bean name="meettingAction" class="com.cs.action.MeettingAction" autowire="byType"/>
+    
+    <!-- 课程进度 -->
+    <bean name="progressDao" class="com.cs.dao.ProgressDAOlmpl" autowire="byType"/>
+    <bean name="progressService" class="com.cs.service.ProgressServicelmpl" autowire="byType"/>
+    <bean name="progressAction" class="com.cs.action.ProgressAction" autowire="byType"/>
+    
+    <!-- 员工反馈管理 -->
+	<!-- <bean name="empFeedBackDao" class="com.cs.dao.EmpFeedBackDAOlmpl" autowire="byType"/>
+    <bean name="empFeedBackService" class="com.cs.service.EmpFeedBackServicelmpl" autowire="byType"/>
+    <bean name="empFeedBackAction" class="com.cs.action.EmpFeedBackAction" autowire="byType"/> -->
+<!-- 王怡 -->
+	
+	<!-- 王成斌 -->
+    <!-- 财务基本信息  -->
+    <bean name="salaryInfoDao" class="com.cs.dao.SalaryInfoDAOImpl" autowire="byType"/>
+    <bean name="salaryInfoService" class="com.cs.service.SalaryInfoServiceImpl" autowire="byType"/>
+    <bean name="salaryInfoAction" class="com.cs.action.SalaryInfoAction" autowire="byType"/>
+    <!-- 支出类型  -->
+    <bean name="payTypeDao" class="com.cs.dao.PayTypeDAOImpl" autowire="byType"/>
+    <bean name="payTypeService" class="com.cs.service.PayTypeServiceImpl" autowire="byType"/>
+    <bean name="payTypeAction" class="com.cs.action.PayTypeAction" autowire="byType"/>
+
+    <!-- 工资管理  -->
+    <bean name="salaryDao" class="com.cs.dao.SalaryDAOImpl" autowire="byType"/>
+    <bean name="salaryService" class="com.cs.service.SalaryServiceImpl" autowire="byType"/>
+    <bean name="salaryAction" class="com.cs.action.SalaryAction" autowire="byType"/>
+
+    <!-- 支出管理 -->
+    <bean name="payDao" class="com.cs.dao.PayDAOImpl" autowire="byType"/>
+    <bean name="payService" class="com.cs.service.PayServiceImpl" autowire="byType"/>
+    <bean name="payAction" class="com.cs.action.PayAction" autowire="byType"/>
+
+    <!--收入管理-->
+    <bean name="incomeDao" class="com.cs.dao.IncomeDAOImpl" autowire="byType"/>
+    <bean name="incomeService" class="com.cs.service.IncomeServiceImpl" autowire="byType"/>
+    <bean name="incomeAction" class="com.cs.action.IncomeAction" autowire="byType"/>
+
+    <!--收入类型  -->
+    <bean name="incomeTypeDao" class="com.cs.dao.IncomeTypeDAOImpl" autowire="byType"/>
+    <bean name="incomeTypeService" class="com.cs.service.IncomeTypeServiceImpl" autowire="byType"/>
+    <bean name="incomeTypeAction" class="com.cs.action.IncomeTypeAction" autowire="byType"/>
+    <!-- 财——务——管——理——表   -->
+
+    <!-- 王成斌 -->
+
+</beans>

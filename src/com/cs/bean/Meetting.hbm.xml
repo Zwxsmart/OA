@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- 探讨会的Mapping映射文件，对应meetting -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.bean">
+    <class name="Meetting" table="t_meetting">
+        <id name="meettingId" column="meettingid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="createdDay" column="createdday"/>
+        <property name="des" column="des"/>
+        <property name="empId" column="empid"/>
+        <property name="meettingDay" column="meettingday"/>
+        <property name="status" column="status"/>
+        
+        <!-- 研讨会需要主动关联的表就只有员工表 -->
+        <!-- 关联到emp表 -->
+        <many-to-one name="emp" column="empid" class="com.cs.bean.Emp" fetch="select" cascade="none" insert="false" update="false"/>
+        
+    </class>
+</hibernate-mapping>

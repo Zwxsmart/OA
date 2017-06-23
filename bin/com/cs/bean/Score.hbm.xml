@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cs.bean">
+    <class name="Score" table="t_score">
+        <id name="scoreId" column="scoreid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="stuId" column="stuid"/>
+       	<property name="courseId" column="courseid"/>
+        <property name="score" column="score"/>
+        <property name="testDay" column="testday"/>
+        
+        <!-- 多个成绩对应一个学生 -->
+        <many-to-one name="stu" column="stuid" class="com.cs.bean.Stu" fetch="select" cascade="none" insert="false" update="false"/>
+        <!-- 多个成绩对应一个课程 -->
+        <many-to-one name="course" column="courseid" class="com.cs.bean.Course" fetch="select" cascade="none" insert="false" update="false"/>
+    </class>
+</hibernate-mapping>

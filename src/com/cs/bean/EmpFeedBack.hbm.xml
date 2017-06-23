@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cs.bean">
+    <class name="EmpFeedBack" table="t_empfeedback">
+        <id name="feedBackId" column="feedbackid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="empId" column="empid"/>
+        <property name="feedBackDay" column="feedbackday"/>
+        <property name="des" column="des"/>
+        <property name="status" column="status"/>
+        
+        <!-- 多次反馈对应一个员工 -->
+        <many-to-one name="emp" column="empid" class="com.cs.bean.Emp" fetch="join" insert="false" update="false"></many-to-one>
+        
+    </class>
+     
+</hibernate-mapping>

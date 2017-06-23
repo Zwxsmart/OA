@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- 课程表的Mapping映射文件，对应Course -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.bean">
+    <class name="Progress" table="t_progress">
+        <id name="progressId" column="progressid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="empId" column="empid"/>
+        <property name="gradeId" column="gradeid"/>
+        <property name="des" column="des"/>
+        <property name="progressDay" column="progressday"/>
+        <property name="status" column="status"/>
+        
+        <many-to-one name="grade" column="gradeid" class="com.cs.bean.Grade" fetch="select" cascade="none" insert="false" update="false"/>
+        <many-to-one name="emp" column="empid" class="com.cs.bean.Emp" fetch="select" cascade="none" insert="false" update="false"/>
+    </class>
+</hibernate-mapping>

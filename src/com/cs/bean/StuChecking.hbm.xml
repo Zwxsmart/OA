@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cs.bean">
+    <class name="StuChecking" table="t_stuchecking">
+        <id name="checkingId" column="checkingid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="stuId" column="stuid"/>
+       	<property name="checkingDay" column="checkingday"/>
+        <property name="checking1" column="checking1"/>
+        <property name="checking2" column="checking2"/>
+        <property name="checking3" column="checking3"/>
+        
+         <!-- 一个学生对应多条考勤记录 -->
+        <many-to-one name="stu" column="stuid" class="com.cs.bean.Stu" fetch="select" cascade="none" insert="false" update="false"/>
+    </class>
+</hibernate-mapping>

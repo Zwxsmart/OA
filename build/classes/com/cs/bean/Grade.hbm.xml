@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cs.bean">
+    <class name="Grade" table="t_grade">
+        <id name="gradeId" column="gradeid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="name" column="name"/>
+        <property name="empId1" column="empid1"/>
+       	<property name="empId2" column="empid2"/>
+        <property name="empId3" column="empid3"/>
+        <property name="quantity" column="quantity"/>
+        <property name="status" column="status"/>
+    </class>
+</hibernate-mapping>

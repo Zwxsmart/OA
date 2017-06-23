@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.bean">
+    <class name="EmpChecking" table="t_empchecking">
+        <id name="checkingId" column="checkingid">
+            <generator class="uuid.hex"/>
+        </id>
+    	 <property name="empId" column="empid"/>
+       	 <property name="checkingDay" column="checkingday"/>
+       	 <property name="time1" column="time1"/>
+       	 <property name="time2" column="time2"/>
+       	 <property name="time3" column="time3"/>
+       	 <property name="time4" column="time4"/>
+       	 <property name="time5" column="time5"/>
+       	 <property name="time6" column="time6"/>
+       	 <property name="time7" column="time7"/>
+       	 <property name="time8" column="time8"/>
+        
+        <!--<many-to-one name="dept" column="depid" class="com.cs.bean.Dept" fetch="select" cascade="all"/>  -->
+       	
+        
+    </class>
+    
+    
+</hibernate-mapping>

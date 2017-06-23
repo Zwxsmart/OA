@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cs.bean">
+    <class name="Goods" table="t_goods">
+        <id name="goodsId" column="goodsid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="name" column="name"/>
+        <property name="quantity" column="quantity"/>
+         <property name="quantityCount" column="quantitycount"/>
+        <property name="des" column="des"/>
+        <property name="unitPrice" column="unitprice"/>
+        <property name="buyDay" column="buyday"/>
+ 		<property name="goodsTypeId" column="goodstypeid"/>
+        <property name="status" column="status"/>
+        
+        <many-to-one name="goodsType" column="goodstypeid" class="com.cs.bean.GoodsType" fetch="join" insert="false" update="false"></many-to-one>
+        
+        <!-- 一个物品可以有多次物品领用 -->
+         <set name="goodsUses" inverse="true" lazy="true">
+	            <key column="goodsid"/>
+	            <one-to-many class="com.cs.bean.GoodsUse"/>
+	     </set>
+        
+    </class>
+     
+    
+</hibernate-mapping>

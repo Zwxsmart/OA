@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping package="com.cs.bean">
+	<class name = "IncomeType" table ="t_incometype" >
+		<id name="incomeTypeId" column = "incometypeid" >
+			<generator class="uuid.hex" /> 
+		</id>
+		<property name="name" column="name" />
+		<property name="des" column = "des" />
+		<property name="status" column="status" />
+		
+		<set name="incomes" inverse="true" lazy="true">
+            <key column="incometypeid"/>
+            <one-to-many class="com.cs.bean.Income"/>
+     	</set>
+	</class>
+</hibernate-mapping>

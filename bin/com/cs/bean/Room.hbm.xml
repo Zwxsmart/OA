@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.bean">
+	 <class name="Room" table="t_room">
+        <id name="roomId" column="roomid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="name" column="name"/>
+        <property name="stuId" column="stuid"/>
+        <property name="quantity" column="quantity"/>
+        <property name="status" column="status"/>
+        <!-- 一个宿舍对应一个宿舍长 -->
+        <many-to-one column="stuid" name="stu" class = "com.cs.bean.Stu" fetch="select" insert="false" update="false"></many-to-one>
+        
+        <!-- ZYL 一个宿舍多次巡查 -->
+         <set name="checks" inverse="true" lazy="true">
+	            <key column="roomid"/>
+	            <one-to-many class="com.cs.bean.Check"/>
+	     </set>
+	</class>
+</hibernate-mapping>

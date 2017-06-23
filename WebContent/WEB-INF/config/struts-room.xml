@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.action.extension" value="action,,do" />
+    <constant name="struts.multipart.maxSize" value="20971520" />
+
+    <package name="room-struts" extends="my-struts" namespace="/room">
+        <action name="*" class="com.cs.action.RoomAction" method="{1}">
+        	<result name="skip">/WEB-INF/views/student/room.jsp</result>
+        	<result name="skips">/WEB-INF/stu/room.jsp</result>
+        	<result name="admissionsSkip">/WEB-INF/admissions/student/room.jsp</result><!-- 招生部主任 -->
+        	<result name="NoPrevillige">/WEB-INF/views/NoPrevillige.jsp</result>
+            <result name="save" type="json"/><!-- 添加宿舍 -->
+            <result name="all" type="json"/><!-- 查询全部宿舍 -->
+            <result name="alls" type="json"/><!-- 查询全部宿舍 -->
+            <result name="update" type="json"/><!-- 修改宿舍信息 -->
+            <result name="id" type="json"></result><!-- 查询单个宿舍详情 -->
+            <result name="addStuByIds" type="json"></result>
+            <result name="delStuByIds" type="json"></result>
+            <result name="updateFreeze" type="json"></result>
+            <result name="blurredAllQuery" type="json"></result><!-- 模糊查询 -->
+            <result name="blurredAllQuerys" type="json"></result><!-- 模糊查询 -->
+            <result name="freezeAll" type="json"></result><!-- 查询冻结宿舍 -->
+        </action>
+    </package>
+</struts>

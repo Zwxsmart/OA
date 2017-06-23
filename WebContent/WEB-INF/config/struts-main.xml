@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.action.extension" value="action,,do" />
+    <constant name="struts.multipart.maxSize" value="20971520" />
+
+    <package name="my-struts" extends="json-default">
+
+        <global-results>
+            <result name="ex">/WEB-INF/views/error.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping result="ex" exception="java.lang.Exception"/>
+        </global-exception-mappings>
+
+    </package>
+
+    <include file="../config/struts-index.xml"/>
+    <include file="../config/struts-user.xml"/>
+    <include file="../config/struts-page.xml"/>
+    
+<!-- 张文星 -->
+	<include file="../config/struts-stu.xml"/><!-- 学生xml -->
+	<include file="../config/struts-grade.xml"/><!-- 班级xml -->
+    <include file="../config/struts-room.xml"></include><!-- 宿舍xml -->
+    <include file="../config/struts-score.xml"></include><!-- 成绩xml -->
+    <include file="../config/struts-stuleave.xml"></include><!--学生请假xml -->
+	<include file="../config/struts-talk.xml"></include><!--学生谈心xml -->
+	<include file="../config/struts-stuFeedback.xml"></include><!--学生反馈xml -->
+	<include file="../config/struts-job.xml"></include><!--学生就业xml -->
+	<include file="../config/struts-stuChecking.xml"></include><!--学生考勤xml -->
+	<include file="../config/struts-auth.xml"></include><!--权限xml -->
+<!-- 张文星 -->
+<!-- 姜圆圆 -->
+	<include file="../config/struts-noticeType.xml"/>
+	<include file="../config/struts-notice.xml"/>
+<!--  -->
+	
+<!-- 温馨 -->
+	<include file="../config/struts-intention.xml"/>
+	<include file="../config/struts-predetermine.xml"/>
+<!--  -->
+	
+<!-- 王怡 -->
+	<include file="../config/struts-course.xml"/>
+    <include file="../config/struts-meetting.xml"/>
+    <include file="../config/struts-progressl.xml"/>
+    <include file="../config/struts-empfeedback.xml"/>
+<!-- 王怡 -->
+    
+<!-- 王彬 ,ZYL-->
+   	<include file="../config/struts-dept.xml"/>
+    <include file="../config/struts-role.xml"/>
+	<include file="../config/struts-emp.xml"/>
+	<include file="../config/struts-edu.xml"/>
+	<include file="../config/struts-goodsType.xml"/>
+    <include file="../config/struts-goods.xml"/>
+    <include file="../config/struts-exp.xml"/>
+    <include file="../config/struts-duty.xml"/>
+    <include file="../config/struts-empCheckingInfo.xml"/>
+    <include file="../config/struts-empChecking.xml"/>
+    <include file="../config/struts-empAppeal.xml"/>
+    <include file="../config/struts-empFeedBack.xml"/>
+    <include file="../config/struts-empLeave.xml"/>
+    <include file="../config/struts-check.xml"/>
+    <include file="../config/struts-goodsApp.xml"/>
+    <include file="../config/struts-report.xml"/>
+    <include file="../config/struts-goodsUse.xml"/>
+      <include file="../config/struts-admin.xml"/>
+<!-- 王彬,ZYL -->
+
+<!--王成斌-->
+    <include file="../config/struts-Income.xml"/>
+    <include file="../config/struts-IncomeType.xml"/>
+    <include file="../config/struts-pay.xml"/>
+    <include file="../config/struts-payType.xml"/>
+    <include file="../config/struts-salary.xml"/>
+    <include file="../config/struts-salaryInfo.xml"/>
+<!--王成斌-->
+
+</struts>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.action.extension" value="action,,do" />
+    <constant name="struts.multipart.maxSize" value="20971520" />
+
+    <package name="income-struts" extends="my-struts" namespace="/income">
+        <action name="*" class="com.cs.action.IncomeAction" method="{1}">
+        	<result name="income">/WEB-INF/views/salary/income.jsp</result>
+        	<result name="incomebiaoge">/WEB-INF/views/salary/incomeChart.jsp</result>
+        	<result name="getChartsPie" type="json"></result>
+        	<result name="save" type="json"/><!-- 添加工資基本信息 -->
+            <result name="all" type="json"/><!-- 查询全部工资信息-->
+            <result name="update" type="json"/><!-- 修改工资信息 -->
+            <result name="id" type="json"></result><!-- 查询单工资信息详情 -->
+            <result name="blurredAllQuery" type="json"></result><!-- 模糊查询 -->
+            <result name="serachtime" type="json"/><!-- 时间段查询 -->
+            <result name="NoPrevillige">/WEB-INF/views/NoPrevillige.jsp</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.bean">
+    <class name="Emp" table="t_emp">
+        <id name="empId" column="empid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="name" column="name"/>
+        <property name="pwd" column="pwd"/>
+        <property name="idCard" column="idcard"/>
+        <property name="nation" column="nation"/>
+        <property name="gender" column="gender"/>
+        <property name="fingerNo" column="fingerno"/>
+        <property name="birthDay" column="birthday"/>
+        <property name="email" column="email"/>
+        <property name="phone" column="phone"/>
+        <property name="qq" column="qq"/>
+        <property name="weChat" column="wechat"/>
+        <property name="address" column="address"/>
+        <property name="married" column="married"/>
+        <property name="contactName" column="contactname"/>
+        <property name="contactPhone" column="contactphone"/>
+        <property name="college" column="college"/>
+        <property name="major" column="major"/>
+        <property name="eduback" column="eduback"/>
+        <property name="bankName" column="bankname"/>
+        <property name="accountName" column="accountname"/>
+        <property name="accountNo" column="accountno"/>
+        <property name="alipay" column="alipay"/>
+        <property name="hireDay" column="hireday"/>
+        <property name="resignDay" column="resignday"/>
+        <property name="status" column="status"/>
+        
+        <!--<many-to-one name="dept" column="depid" class="com.cs.bean.Dept" fetch="select" cascade="all"/>  -->
+       	
+        
+    </class>
+    
+    
+</hibernate-mapping>

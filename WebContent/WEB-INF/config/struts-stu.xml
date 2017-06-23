@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.action.extension" value="action,,do" />
+    <constant name="struts.multipart.maxSize" value="20971520" />
+
+    <package name="stud-struts" extends="my-struts" namespace="/stu">
+        <action name="*" class="com.cs.action.StuAction" method="{1}">
+        		<result name="loginPage">/WEB-INF/stu/login.jsp</result><!-- 学生登录页面 -->
+        	<result name="input">/WEB-INF/stu/error.jsp</result><!-- 登入失败 -->
+            <result name="out">/WEB-INF/stu/login.jsp</result>
+            <result name="messagePage">/WEB-INF/stu/stu.jsp</result>
+           	<result name="stuMessage" type="json"></result>
+           	<result name="alls" type="json"/><!-- 查询全部学生 -->
+        	<result name="stuLogin">/WEB-INF/stu/index.jsp</result><!-- 登入成功 -->
+        	<result name="skip">/WEB-INF/views/student/stu.jsp</result>
+        	<result name="admissionsSkip">/WEB-INF/admissions/student/stu.jsp</result><!-- 招生部主任 -->
+            <result name="save" type="json"/><!-- 添加学生 -->
+            <result name="all" type="json"/><!-- 查询全部学生 -->
+            <result name="update" type="json"/><!-- 修改学生信息 -->
+            <result name="freezeAll" type="json"></result><!-- 查看被冻结的所有学生 -->
+            <result name="blurredAllQuery" type="json"></result><!-- 根据全部字段模糊查询 -->
+            <result name="id" type="json"></result><!-- 查询单个学生详情 -->
+            <result name="termIdQueryAll" type="json"></result><!-- 条件查询学生 -->
+            <result name="updateFreeze" type="json"></result><!-- 冻结学生 -->
+            <result name="NoPrevillige">/WEB-INF/views/NoPrevillige.jsp</result>
+            <result name="input" type="json"></result>
+        </action>
+    </package>
+</struts>

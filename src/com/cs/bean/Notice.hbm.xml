@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.bean">
+	<class name="Notice" table="t_notice">
+		<id name="noticeId" column="noticeid">
+			<generator class="uuid.hex"/>		
+		</id>
+		<property name="name" column="name"></property>
+		<property name="des" column="des"></property>
+		<property name="typeId" column="typeid"></property>
+		<property name="noticeDay" column="noticeday"></property>
+		<property name="empId" column="empid"></property>
+		<property name="status" column="status"></property>
+		<!-- 多个公告对应一个类型类型 -->
+		<many-to-one name="noticeType" column="typeid" class="com.cs.bean.NoticeType" fetch="join" insert="false" update="false"></many-to-one>
+		<!-- 多个公告对应一个人 -->
+		<many-to-one name="emps" column="empid" class="com.cs.bean.Emp" fetch="join" insert="false" update="false"></many-to-one>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.action.extension" value="action,,do" />
+    <constant name="struts.multipart.maxSize" value="20971520" />
+
+    <package name="edu-struts" extends="my-struts" namespace="/edu">
+        <action name="*" class="com.cs.action.EduAction" method="{1}">
+        	<result name="skip">/WEB-INF/views/emp/edu.jsp</result>
+            <result name="save" type="json"/>
+            <result name="all" type="json"/>
+            <result name="update" type="json"/>
+            <result name="delete" type="json"/>
+            <result name="blurredAllQuery" type="json"></result><!-- 模糊查询 -->
+            <result name="NoPrevillige">/WEB-INF/views/NoPrevillige.jsp</result> <!-- 错误页面 -->
+             <!-- 员工个人教育背景 -->
+            <result name="empEduPage">/WEB-INF/emp/message/edu.jsp</result>
+            <result name="empEdu" type="json"/>
+             <result name="saveEdu" type="json"/>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,32 @@
+
+
+* {
+	margin:0;
+	padding:0;
+}
+td{
+	text-align:center;
+}
+.logo {
+	width:150px;
+	height:58px;
+}
+
+#wel {
+	width:100px;
+	line-height:58px;
+	margin-left:200px;
+}
+
+.menu {
+	
+}
+
+.menu ul {
+	
+}
+
+.menu ul li {
+	list-style:none;
+	margin:5px auto 5px auto;
+}

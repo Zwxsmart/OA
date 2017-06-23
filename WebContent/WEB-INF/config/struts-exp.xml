@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.action.extension" value="action,,do" />
+    <constant name="struts.multipart.maxSize" value="20971520" />
+
+    <package name="exp-struts" extends="my-struts" namespace="/exp">
+        <action name="*" class="com.cs.action.ExpAction" method="{1}">
+        	<result name="skip">/WEB-INF/views/emp/exp.jsp</result>
+            <result name="save" type="json"/>
+            <result name="all" type="json"/>
+            <result name="update" type="json"/>
+            <result name="delete" type="json"/>
+              <result name="empExpPage">/WEB-INF/emp/message/exp.jsp</result>
+            <result name="empExp" type="json"/>
+            <result name="saveExp" type="json"/>
+             <result name="blurredAll" type="json"/>
+            <result name="serachTime" type="json"/>
+            <result name="NoPrevillige">/WEB-INF/views/NoPrevillige.jsp</result> <!-- 错误页面 -->
+        </action>
+    </package>
+</struts>

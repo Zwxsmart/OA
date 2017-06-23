@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.bean">
+    <class name="Emp" table="t_emp">
+        <id name="empId" column="empid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="depId" column="depid"/>
+        <property name="roleId" column="roleid"/>
+        <property name="name" column="name"/>
+        <property name="pwd" column="pwd"/>
+        <property name="idCard" column="idcard"/>
+        <property name="nation" column="nation"/>
+        <property name="gender" column="gender"/>
+        <property name="fingerNo" column="fingerno"/>
+        <property name="birthDay" column="birthday"/>
+        <property name="email" column="email"/>
+        <property name="phone" column="phone"/>
+        <property name="qq" column="qq"/>
+        <property name="weChat" column="wechat"/>
+        <property name="address" column="address"/>
+        <property name="married" column="married"/>
+        <property name="contactName" column="contactname"/>
+        <property name="contactPhone" column="contactphone"/>
+        <property name="college" column="college"/>
+        <property name="major" column="major"/>
+        <property name="eduback" column="eduback"/>
+        <property name="bankName" column="bankname"/>
+        <property name="accountName" column="accountname"/>
+        <property name="accountNo" column="accountno"/>
+        <property name="alipay" column="alipay"/>
+        <property name="hireDay" column="hireday"/>
+        <property name="resignDay" column="resignday"/>
+        <property name="status" column="status"/>
+        
+	     <many-to-one name="dept" column="depid" class="com.cs.bean.Dept" fetch="select" cascade="none" insert="false" update="false"/>
+        
+     	<many-to-one name="role" column="roleid" class="com.cs.bean.Role" fetch="select" cascade="none" insert="false" update="false"/> 
+     	
+     	<!-- 一个招生老师对应多个学生 -->
+       	<set name="stus" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.Stu"/>
+	     </set>
+	     
+       	<!-- 多个员工对应一个班级 -->
+       	<set name="grades" inverse="true" lazy="true">
+	            <key column="gradeid"/>
+	            <one-to-many class="com.cs.bean.Grade"/>
+	     </set>
+        
+        	<!-- 一个员工可以有多次物品申购 -->
+         <set name="goodsApps" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.GoodsApp"/>
+	     </set>
+	     
+	     <!-- 一个员工可以有多次物品领用 -->
+         <set name="goodsUses" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.GoodsUse"/>
+	     </set>
+	     
+	      <!-- 一个员工可以有多个教育背景 -->
+         <set name="edus" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.Edu"/>
+	     </set>
+	     
+	      <!-- 一个员工可以有多个工作经历 -->
+         <set name="exps" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.Exp"/>
+	     </set>
+	     
+	      <!-- 一个员工可以有多个工作日志 -->
+         <set name="reports" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.Report"/>
+	     </set>
+        
+         <!-- 一个员工可以有多次值班 -->
+         <set name="dutys" inverse="true" lazy="true">
+	            <key column="dutyid"/>
+	            <one-to-many class="com.cs.bean.Duty"/>
+	     </set>
+	     
+	      <!-- 一个员工可以有多次巡查 -->
+         <set name="checks" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.Check"/>
+	     </set>
+	     
+	      <!-- 一个员工可以有多次请假 -->
+         <set name="empleaves" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.EmpLeave"/>
+	     </set>
+	     
+	      <!-- 一个员工可以有多次反馈 -->
+         <set name="efbs" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.EmpFeedBack"/>
+	     </set>
+        
+	      <!-- 一个员工对应于多个公告 -->
+	   	<set name="noticess" inverse="true" lazy="true">
+	   			<key column="empid"/>
+	   			<one-to-many class="com.cs.bean.Notice"/>
+	   	</set>
+		
+		   <!-- 一个员工收入可以有多个收入 -->
+	     <set name="pay" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.Pay"/>
+	     </set>
+	     	     
+	       <!-- 收入 -->
+	     <set name="income" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.Income"/>
+	     </set>
+	     <!-- 工资发放 -->
+	     <set name="salary" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.Salary"/>
+	     </set>
+	     <!-- 基本工资 -->
+	     <set name="salaryInfo" inverse="true" lazy="true">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.SalaryInfo"/>
+	     </set>
+	       <!-- 一个员工对应多条谈心记录 -->
+	     <set name="talks">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.Talk"/>
+	     </set>
+	     
+	        <!-- 一个员工对应多条课程进度 -->
+	     <set name="ps">
+	            <key column="empid"/>
+	            <one-to-many class="com.cs.bean.Progress"/>
+	     </set>
+    </class>
+</hibernate-mapping>

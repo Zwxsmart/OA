@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cs.bean">
+    <class name="Grade" table="t_grade">
+        <id name="gradeId" column="gradeid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="name" column="name"/>
+        <property name="empId1" column="empid1"/>
+       	<property name="empId2" column="empid2"/>
+        <property name="empId3" column="empid3"/>
+        <property name="quantity" column="quantity"/>
+        <property name="status" column="status"/>
+        <property name="des" column="des"/>
+        
+        <!-- 一个班级多个学生 -->
+         <set name="stus" inverse="true" lazy="true">
+	            <key column="gradeid"/>
+	            <one-to-many class="com.cs.bean.Stu"/>
+	     </set>
+	     <!-- 一个班级多个员工 -->
+	    <many-to-one name="emp1" class="com.cs.bean.Emp" column="empid1" fetch="join" insert="false" update="false"></many-to-one>
+        <many-to-one name="emp2" class="com.cs.bean.Emp" column="empid2" fetch="join" insert="false" update="false"></many-to-one>
+        <many-to-one name="emp3" class="com.cs.bean.Emp" column="empid3" fetch="join" insert="false" update="false"></many-to-one>
+        
+        <!-- 王怡 配置用于课程进度和班级之间的关联关系 -->
+        <set name="progresss" inverse="true" lazy="true">
+	            <key column="progressid"/>
+	            <one-to-many class="com.cs.bean.Progress"/>
+	     </set>
+	     
+	     <!-- ZYL 一个班级多次巡查 -->
+         <set name="checks" inverse="true" lazy="true">
+	            <key column="gradeid"/>
+	            <one-to-many class="com.cs.bean.Check"/>
+	     </set>
+	     
+    </class>
+</hibernate-mapping>

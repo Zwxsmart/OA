@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cs.bean">
+    <class name="StuFeedback" table="t_stufeedback">
+        <id name="feedbackId" column="feedbackid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="stuId" column="stuid"/>
+       	<property name="feedbackDay" column="feedbackday"/>
+        <property name="des" column="des"/>
+        <property name="status" column="status"/>
+        
+        <!-- 一个学生对应多个反馈记录 -->
+        <many-to-one name="stu" column="stuid" class="com.cs.bean.Stu" fetch="select" cascade="none" insert="false" update="false"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.action.extension" value="action,,do" />
+    <constant name="struts.multipart.maxSize" value="20971520" />
+
+    <package name="report-struts" extends="my-struts" namespace="/report">
+        <action name="*" class="com.cs.action.ReportAction" method="{1}">
+        	<result name="skip">/WEB-INF/views/emp/report.jsp</result>
+            <result name="save" type="json"/>
+            <result name="all" type="json"/>
+            <result name="update" type="json"/>
+            <result name="activate" type="json"/>
+            <result name="disable" type="json"/>
+            <result name="blurredAll" type="json"/>
+            <result name="serachTime" type="json"/>
+            <result name="freezeAll" type="json"/>
+            <result name="freezeAll1" type="json"/>
+            <result name="NoPrevillige">/WEB-INF/views/NoPrevillige.jsp</result> <!-- 错误页面 -->
+            
+             <result name="empReportPage">/WEB-INF/emp/message/report.jsp</result>
+             <result name="empReport" type="json"/>
+             <result name="saveReport" type="json"/>
+        </action>
+    </package>
+</struts>

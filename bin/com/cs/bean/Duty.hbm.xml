@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.bean">
+    <class name="Duty" table="t_duty">
+        <id name="dutyId" column="dutyid">
+            <generator class="uuid.hex"/>
+        </id>
+         <property name="weekDay" column="weekday"/>
+        <property name="empId1" column="empid1"/>
+        <property name="add1" column="add1"/>
+        <property name="empId2" column="empid2"/>
+        <property name="add2" column="add2"/>
+        <property name="empId3" column="empid3"/>
+        <property name="add3" column="add3"/>
+        <property name="empId4" column="empid4"/>
+        <property name="add4" column="add4"/>
+        <property name="empId5" column="empid5"/>
+        <property name="add5" column="add5"/>
+        <property name="empId6" column="empid6"/>
+        <property name="add6" column="add6"/>
+        <property name="empId7" column="empid7"/>
+        <property name="add7" column="add7"/>
+        <property name="empId8" column="empid8"/>
+        <property name="add8" column="add8"/>
+        
+        <!-- 多个值班对应一个员工 -->
+        <many-to-one name="emp1" column="empid1" class="com.cs.bean.Emp" fetch="join" insert="false" update="false"></many-to-one>
+        <many-to-one name="emp2" column="empid2" class="com.cs.bean.Emp" fetch="join" insert="false" update="false"></many-to-one>
+        <many-to-one name="emp3" column="empid3" class="com.cs.bean.Emp" fetch="join" insert="false" update="false"></many-to-one>
+        <many-to-one name="emp4" column="empid4" class="com.cs.bean.Emp" fetch="join" insert="false" update="false"></many-to-one>
+        <many-to-one name="emp5" column="empid5" class="com.cs.bean.Emp" fetch="join" insert="false" update="false"></many-to-one>
+        <many-to-one name="emp6" column="empid6" class="com.cs.bean.Emp" fetch="join" insert="false" update="false"></many-to-one>
+        <many-to-one name="emp7" column="empid7" class="com.cs.bean.Emp" fetch="join" insert="false" update="false"></many-to-one>
+        <many-to-one name="emp8" column="empid8" class="com.cs.bean.Emp" fetch="join" insert="false" update="false"></many-to-one>
+        
+    </class>
+    
+    
+</hibernate-mapping>

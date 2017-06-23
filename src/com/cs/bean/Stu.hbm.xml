@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cs.bean">
+    <class name="Stu" table="t_stu">
+        <id name="stuId" column="stuid">
+            <generator class="uuid.hex"/>
+        </id>
+        <property name="stuNo" column="stuno"/>
+        <property name="age" column="age"/>
+        <property name="name" column="name"/>
+        <property name="pwd" column="pwd"/>
+        <property name="idCard" column="idCard"/>
+        <property name="phone" column="phone"/>
+        <property name="qq" column="qq"/>
+        <property name="weChat" column="wechat"/>
+        <property name="school" column="school"/>
+        <property name="birthday" column="birthday"/>
+        <property name="gender" column="gender"/>
+        <property name="address" column="address"/>
+        <property name="nation" column="nation"/>
+        <property name="resIdence" column="residence"/>
+        <property name="gradeId" column="gradeid"/>
+        <property name="roomId" column="roomid"/>
+        <property name="parentName" column="parentname"/>
+        <property name="parentPhone" column="parentphone"/>
+        <property name="startDay" column="startday"/>
+        <property name="empId" column="empid"/>
+        <property name="des" column="des"/>
+        <property name="status" column="status"/>
+        <property name="stuStatus" column="stustatus"/>
+        <property name="role" column="role"></property>
+        
+        <!-- 一个招生老师对应多个学生 -->
+         <many-to-one name="emp" column="empid" class="com.cs.bean.Emp" fetch="select" cascade="none" insert="false" update="false"/>
+        <!-- 一个班级对应多个学生 -->
+        <many-to-one name="grade" column="gradeid" class="com.cs.bean.Grade" fetch="select" cascade="none" insert="false" update="false"/>
+        <!-- 一个学生多个成绩 -->
+        <set name="scores" inverse="true" lazy="true">
+	            <key column="stuid"/>
+	            <one-to-many class="com.cs.bean.Score"/>
+	     </set>
+	     <!-- 一个学生对应一个宿舍宿舍长 -->
+        <one-to-one name="room" property-ref="stu" class="com.cs.bean.Room"></one-to-one>
+   		
+	     <!-- 一个学生对应多条请假记录 -->
+	     <set name="stuLeaves" inverse="true" lazy="true">
+	            <key column="stuid"/>
+	            <one-to-many class="com.cs.bean.StuLeave"/>
+	     </set>
+	     <!-- 一个学生对应多条反馈记录 -->
+	     <set name="stuFeedback" inverse="true" lazy="true" >
+	            <key column="stuid"/>
+	            <one-to-many class="com.cs.bean.StuFeedback"/>
+	     </set>
+	      <!-- 一个学生对应多条就业信息 -->
+	     <set name="jobs" inverse="true" lazy="true">
+	            <key column="stuid"/>
+	            <one-to-many class="com.cs.bean.Job"/>
+	     </set>
+	      <!-- 一个学生对应多条谈心记录 -->
+	     <set name="talks" inverse="true" lazy="true">
+	            <key column="stuid"/>
+	            <one-to-many class="com.cs.bean.Talk"/>
+	     </set>
+	     <!-- 一个学生对应多条考勤记录 -->
+	     <set name="stuChecking" inverse="true" lazy="true">
+	            <key column="stuid"/>
+	            <one-to-many class="com.cs.bean.StuChecking"/>
+	     </set>
+		  <!-- 学生缴费 -->
+	     <set name="incomes" inverse="true" lazy="true">
+	            <key column="stuid"/>
+	            <one-to-many class="com.cs.bean.Income"/>
+	     </set>
+    </class>
+</hibernate-mapping>
